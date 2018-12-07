@@ -1,0 +1,8 @@
+127.0.0.1 - - [21/Nov/2018:20:36:03 +0800] "GET /search.html?q=%E7%94%B5%E8%84%91 HTTP/1.0" 200 18823 http-bio-8092-exec-1 2783
+0:0:0:0:0:0:0:1 - - [21/Nov/2018:20:36:03 +0800] "GET /css/pop_compare.css HTTP/1.0" 200 7557 http-bio-8092-exec-4 5
+127.0.0.1 - - [21/Nov/2018:20:36:03 +0800] "GET /css/psearch.onebox.css HTTP/1.0" 200 21611 http-bio-8092-exec-3 11
+0:0:0:0:0:0:0:1 - - [21/Nov/2018:20:36:03 +0800] "GET /css/psearch20131008.css HTTP/1.0" 200 99604 http-bio-8092-exec-2 9
+127.0.0.1 - - [21/Nov/2018:20:36:03 +0800] "GET /js/jquery.hashchange.js HTTP/1.0" 200 1592 http-bio-8092-exec-5 3
+0:0:0:0:0:0:0:1 - - [21/Nov/2018:20:36:03 +0800] "GET /js/search_main.js HTTP/1.0" 200 119338 http-bio-8092-exec-6 8
+127.0.0.1 - - [21/Nov/2018:20:36:04 +0800] "GET /images/bg_hotsale.gif HTTP/1.0" 200 10475 http-bio-8092-exec-7 5
+0:0:0:0:0:0:0:1 - - [21/Nov/2018:20:38:04 +0800] "GET /favicon.ico HTTP/1.0" 404 973 http-bio-8092-exec-8 3

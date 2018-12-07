@@ -1,0 +1,59 @@
+package com.jt.order.service;
+
+import java.util.List;
+
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.jt.order.mapper.OrderItemMapper;
+import com.jt.order.mapper.OrderMapper;
+import com.jt.order.mapper.OrderShippingMapper;
+import com.jt.order.pojo.Order;
+import com.jt.order.pojo.OrderItem;
+import com.jt.order.pojo.OrderShipping;
+
+//@Service
+public class OrderServiceImpl implements OrderService {
+
+	@Autowired
+	private OrderMapper orderMapper;
+
+	@Autowired
+	private OrderItemMapper orderItemMapper;
+
+	@Autowired
+	private OrderShippingMapper orderShippingMapper;
+
+	// 增加rabbitTemplate
+	@Autowired
+	RabbitTemplate rabbitTemplate;
+
+	@Override
+	public String saveOrder(Order order) {
+		String orderId = order.getUserId() + "" + System.currentTimeMillis();
+		order.setOrderId(orderId);
+		// 原先直接入库，数据很多，入库很慢
+		// 把订单发到消息队列
+		String routingKey = "saveOrder"; // 定义routingKey
+		// 把order对象序列化，变成字符串，发到rabbitmq服务器上
+		rabbitTemplate.convertAndSend(routingKey, order);
+		return orderId;
+	}
+
+	@Override
+	public Order findOrderById(String orderId) {
+		// 1.获取order数据 2.获取orderShipping对象 3.获取orderItem数据
+		// 4.将数据进行组装
+		Order order = orderMapper.selectByPrimaryKey(orderId);
+		OrderShipping orderShipping = orderShippingMapper.selectByPrimaryKey(orderId);
+
+		OrderItem orderItem = new OrderItem();
+		orderItem.setOrderId(orderId);
+		List<OrderItem> orderItems = orderItemMapper.select(orderItem);
+
+		// 数据封装
+		order.setOrderShipping(orderShipping);
+		order.setOrderItems(orderItems);
+		return order;
+	}
+}

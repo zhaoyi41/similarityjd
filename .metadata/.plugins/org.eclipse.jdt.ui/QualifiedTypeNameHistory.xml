@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.jt.order.pojo.Order"/>
+<fullyQualifiedTypeName name="com.rabbitmq.client.AMQP.BasicProperties"/>
+<fullyQualifiedTypeName name="com.rabbitmq.client.AMQP.Channel"/>
+<fullyQualifiedTypeName name="com.rabbitmq.client.AMQP.Connection"/>
+<fullyQualifiedTypeName name="com.rabbitmq.client.Connection"/>
+<fullyQualifiedTypeName name="com.rabbitmq.client.Channel"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="org.apache.solr.client.solrj.beans.Field"/>
+<fullyQualifiedTypeName name="com.jtsearch.service.SearchService"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="com.jt.search.pojo.Item"/>
+<fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+<fullyQualifiedTypeName name="junit.framework.TestCase"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>

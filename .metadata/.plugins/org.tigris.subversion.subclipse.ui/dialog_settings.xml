@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="0" key="CommitDialog.location.y"/>
+	<item value="127" key="CommitDialog.location.x"/>
+	<item value="" key="DirectorySelectionPage.lastParent_https://176.20.12.80:8443/svn/android"/>
+	<item value="500" key="CommitDialog.weights.0"/>
+	<item value="500" key="CommitDialog.weights.1"/>
+	<item value="https://176.20.12.80:8443/svn/android" key="RepositorySelectionPage.lastRepository"/>
+	<item value="860" key="CommitDialog.size.y"/>
+	<item value="1186" key="CommitDialog.size.x"/>
+	<section name="CommitWizard">
+		<item value="500" key="VWeight2"/>
+		<item value="500" key="VWeight1"/>
+		<item value="false" key="ShowCompare"/>
+	</section>
+	<section name="NewLocationWizard">
+		<list key="ConfigurationWizardMainPage.STORE_URL_ID">
+			<item value="https://176.20.12.68:8443/svn/android"/>
+			<item value="https://176.20.12.80:8443/svn/android"/>
+			<item value="http://176.20.12.80:8443/svn/android"/>
+		</list>
+	</section>
+</section>

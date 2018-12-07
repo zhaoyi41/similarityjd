@@ -1,0 +1,64 @@
+package com.jt.Lucene;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.document.Document;
+import org.apache.lucene.document.Field.Store;
+import org.apache.lucene.document.LongField;
+import org.apache.lucene.document.StringField;
+import org.apache.lucene.document.TextField;
+import org.apache.lucene.index.IndexWriter;
+import org.apache.lucene.index.IndexWriterConfig;
+import org.apache.lucene.store.Directory;
+import org.apache.lucene.store.FSDirectory;
+import org.apache.lucene.util.Version;
+import org.wltea.analyzer.lucene.IKAnalyzer;
+
+
+/**
+ * Unit test for simple App.
+ */
+public class LuceneTest {
+	@Test
+	public void createIndex() throws IOException {
+		// 1,创建索引的文件夹,保存查询的数据
+		Directory directory = FSDirectory.open(new File("./index"));
+
+		// 2,定义分词器 可以根据中文语义 进行分词，
+		Analyzer analyzer = new IKAnalyzer();
+
+		// 3,创建索引的配置文件 Analyzer analyzer 分词器
+		IndexWriterConfig conf = new IndexWriterConfig(Version.LUCENE_4_10_2, analyzer);
+		// 4,创建写对象
+		/**
+		 * Directory d 索引输出的位置 IndexWriterConfig 索引输出的配置文件 定义版本号 定义分词器
+		 */
+		IndexWriter indexWriter = new IndexWriter(directory, conf);
+		// 5，添加一行数据
+		Document document = new Document();
+		// 6,设置一行数据中的每个属性
+		document.add(new LongField("id", 7299782, Store.YES));
+		document.add(new StringField("title", "rose", Store.YES));
+		document.add(new TextField("sellPoint", "i love you", Store.YES));
+		document.add(new LongField("price", 1599, Store.YES));
+		//
+		// document.add(new LongField("id",7299782,Store.YES));
+		// document.add(new StringField("title", "BMW",Store.YES));
+		// document.add(new TextField("sellPoint", "i love you very much",
+		// Store.YES));
+		// document.add(new LongField("price", 1599, Store.YES));
+
+		// document.add(new LongField("id",7299782,Store.YES));
+		// document.add(new StringField("title", "小米手机",Store.YES));
+		// document.add(new TextField("sellPoint", "小米手机性价比高", Store.YES));
+		// document.add(new LongField("price", 1599, Store.YES));
+
+		// 7,写数据
+		indexWriter.addDocument(document);
+		// 8,关闭输出流
+		indexWriter.close();
+	}
+
+}
